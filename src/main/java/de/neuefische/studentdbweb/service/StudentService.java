@@ -1,19 +1,22 @@
 package de.neuefische.studentdbweb.service;
 
 import de.neuefische.studentdbweb.model.Student;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
+@Service
 public class StudentService {
 
-    private final List<Student> students = List.of(
+    private final List<Student> students = new ArrayList<>(List.of(
             new Student("Hannah", "1"),
             new Student("Carl", "2"),
             new Student("Martin", "3")
-    );
+    ));
 
     public List<Student> list(String firstLetter) {
         List<Student> studentList = new ArrayList<>();
@@ -36,6 +39,11 @@ public class StudentService {
                 }
             }
             return null;
+        }
+
+        public Student addStudent(Student student) {
+            students.add(student);
+            return student;
         }
     }
 

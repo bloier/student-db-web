@@ -1,4 +1,4 @@
-package de.neuefische.studentdbweb.controller;
+package de.neuefische.studentdbweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
